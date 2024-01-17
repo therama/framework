@@ -12,11 +12,12 @@ Pod::Spec.new do |s|
                   LICENSE
                 }
     s.author             = { "Raffi Manissalian" => "raffi.manissalian@theoplayer.com" }
-    s.source       = { :git => "git@github.com:therama/framework.git", :tag => "#{s.version}" }
+    s.source       = { :git => "https://github.com/therama/framework.git", :tag => "#{s.version}" }
     s.vendored_frameworks = "MyFramework.xcframework"
     s.platform = :ios
     s.swift_version = "4.2"
     s.ios.deployment_target  = '12.0'
+    s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
     s.subspec 'Base' do |subspec|
     end
